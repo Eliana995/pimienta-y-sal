@@ -1,9 +1,10 @@
+//ENRUTADOR
 var express = require('express');
 var router = express.Router();
+const {index, detail}=require('../controllers/mainController') //destructuring para traer de controlador
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', index);
+router.get('/detalle/:id', detail);
 
 module.exports = router;
